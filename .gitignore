@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+node_modules/
+.env
+dist/  # Optional: If you're building your app with Vite and want to ignore build output
