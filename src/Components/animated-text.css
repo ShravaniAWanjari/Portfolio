@@ -1,9 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
-
-
-.league-spartan {
-  font-family: "League Spartan", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/* Styling for the container */
+.scrolling-words-container {
+  display: flex;
+  align-items: center;
   font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Box to contain the scrolling text */
+.scrolling-words-box {
+  height: 3rem; /* Matches the height of a single list item */
+  overflow: hidden;/* Ensures only one item is visible at a time */
+}
+
+/* List styles */
+.scrolling-words-box ul {
+  margin: 0 0.625rem;
+  padding: 0;
+  list-style: none;
+  animation: scrollUp 6s infinite; /* Smooth continuous scrolling */
+}
+
+/* Individual list items */
+.scrolling-words-box ul li {
+  display: flex;
+  align-items: center;
+  height: 3rem; /* Matches the box height */
+}
+
+/* Keyframes for the scrolling animation */
+@keyframes scrollUp {
+  15%, 30% {
+    transform: translateY(-25%);
+  }
+  40%, 60% {
+    transform: translateY(-50%);
+  }
+  70%, 100% {
+    transform: translateY(-75%);
+  }
+}
+
+/* Responsive styling */
+@media (max-width: 1200px) {
+  .scrolling-words-container {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .scrolling-words-container {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrolling-words-container {
+    font-size: 1.2rem;
+  }
 }

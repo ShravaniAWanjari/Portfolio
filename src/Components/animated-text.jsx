@@ -1,27 +1,20 @@
-import React , {useState, useEffect} from "react";
-
+import React from "react";
 import "./animated-text.css";
 
-const AnimatedText = () =>{
-    const [currentText, setCurrentText] = useState("Apps");
-    const texts = ["Apps", "Websites", "User Interactions"];
-
-    useEffect(() => {
-        let index = 0;
-
-        const interval = setInterval(() => {
-            index = (index + 1) % texts.length;
-            setCurrentText(texts[index]);
-        } , 2000);
-
-        return () => clearInterval(interval);
-    }, []);
-
-    return( 
-    <div className="league-spartan">
-        <span className="text-slide">I work on {currentText}</span>
+const AnimatedText = () => {
+  return (
+    <div className="scrolling-words-container">
+      <span>I work on</span>
+      <div className="scrolling-words-box">
+        <ul>
+          <li>User Interactions</li>
+          <li>Apps</li>
+          <li>Websites</li>
+          <li>User Interactions</li>
+        </ul>
+      </div>
     </div>
-    );
+  );
 };
 
 export default AnimatedText;

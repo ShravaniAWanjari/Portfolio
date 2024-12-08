@@ -1,20 +1,30 @@
-.landing-page {
-    position: relative; /* To allow absolutely positioned child elements */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.Landing-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
     height: 100vh;
     width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column; /* Stacks children vertically */
-    justify-content: center; /* Centers the intro text vertically */
+    padding: 0 30px;
 }
 
 .intro-text {
-    flex: none; /* Prevents intro text from stretching or shrinking */
     text-align: left;
-    margin-bottom: auto; /* Pushes it above the cat image */
-    margin-top: 20vh;
-    margin-left: 5%;
+    margin: 20vh 0 0 5%;
 }
 
 .intro-text h1 {
@@ -23,29 +33,98 @@
 }
 
 .cat-image {
-    position: absolute; /* Allows positioning relative to the parent */
-    bottom: 20px; /* Positions it at the bottom */
-    right: 20px; /* Positions it at the right */
+    padding-top: 10%;
     width: 500px;
     height: auto;
-    max-width: 100%; /* Ensures the image doesn't overflow */
+    max-width: 100%;
+    max-height: 70vh; /* Prevents the image from exceeding viewport height */
+    object-fit: contain; /* Ensures the image scales proportionally */
 }
 
-/* Media Queries */
+.Menu-page {
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+    text-align: left;
+}
+
+.menu-list {
+    padding: 10% 0;
+    list-style: none;
+    line-height: 6rem;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.menu-list li {
+    cursor: url('assets/cursor.png'), pointer;
+}
+
+.About-Page {
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 20%;
+}
+
+.about-image {
+    width: 40%;
+    margin-left: auto;
+    margin-right: 10%;
+}
+
+.about-title {
+    position: relative;
+    padding-top: 30vh;
+    font-size: 3rem;
+    text-align: left;
+}
+
+.about-content {
+    padding-top: 5%;
+    text-align: left;
+    line-height: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    margin-right: 60%;
+}
+
+.Experience{
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-bottom: 20%;
+}
+.Experience h1{
+    position: relative;
+    padding-top: 10vh;
+    padding-bottom: 20px;
+    font-size: 3rem;
+    text-align: left;
+}
+
+
+/* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     .cat-image {
-        width: 400px; /* Adjusts size for medium-large screens */
+        width: 450px;
+        margin-top: 70vh;
+    }
+    .intro-text h1 {
+        font-size: 3rem;
     }
 }
 
 @media (max-width: 768px) {
     .cat-image {
-        width: 300px; /* Adjusts size for tablets and smaller screens */
+        width: 300px; /* Adjusted for better scaling on tablets */
     }
 }
 
 @media (max-width: 480px) {
     .cat-image {
-        width: 200px; /* Adjusts size for small screens */
+        width: 200px; /* Prevents the image from becoming too small */
     }
 }
