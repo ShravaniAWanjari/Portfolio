@@ -33,7 +33,7 @@ const LandingPage = () => {
                         <AnimatedText />
                     </div>
                     <img
-                        src="src/assets/cat-with-message.png"
+                        src="../assets/cat-with-message.png"
                         alt="Corner Cat"
                         className="cat-image"
                     />
